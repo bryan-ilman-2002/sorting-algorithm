@@ -1,0 +1,20 @@
+# Python virtual environment
+venv/
+env/
+__pycache__/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__
+
+# Logs and other temporary files
+*.log
+*.swp
+
+# OS-specific files and directories
+.DS_Store
+Thumbs.db
+
+# Configuration files
+*.cfg
