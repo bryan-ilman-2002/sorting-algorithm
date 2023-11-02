@@ -18,3 +18,6 @@ Thumbs.db
 
 # Configuration files
 *.cfg
+
+# Ignore the .idea directory created by JetBrains IDEs
+.idea/
