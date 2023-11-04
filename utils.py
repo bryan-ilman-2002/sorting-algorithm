@@ -1,3 +1,4 @@
+import os
 import psutil
 import random
 
@@ -31,7 +32,6 @@ def generate_dataset(length):
 
 
 def memory_usage():
-    process = psutil.Process()
+    process = psutil.Process(os.getpid())
     mem_info = process.memory_info()
-
-    return mem_info.rss / (1024.0 * 1024.0)  # Convert to MB
+    return mem_info.rss / (1024 ** 2)  # Convert to MB

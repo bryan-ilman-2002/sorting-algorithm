@@ -4,7 +4,10 @@ import time
 
 
 def counting_sort(arr):
-    start_time = time.time()
+    print()
+
+    before_memory = memory_usage()
+    start_time = time.perf_counter()
 
     # Temukan elemen maksimum dalam array masukan secara manual
     max_element = arr[0]
@@ -24,10 +27,13 @@ def counting_sort(arr):
     for i in range(max_element + 1):
         sorted_array.extend([i] * count[i])
 
-    end_time = time.time()
+    end_time = time.perf_counter()
+    after_memory = memory_usage()
+
     execution_time = (end_time - start_time) * 1000
 
-    print(f"Execution Time: {execution_time:.2f} milliseconds")
-    print(f"Memory Usage: {memory_usage():.2f} KB")
+    print('Counting Sort')
+    print(f"Execution Time: {execution_time:.4f} milliseconds")
+    print(f"Extra Space: {after_memory - before_memory:.4f} MB")
 
     return sorted_array

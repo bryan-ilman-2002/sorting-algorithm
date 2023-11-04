@@ -12,9 +12,12 @@ Future Generation Computer Systems, 71:102–112, 2017.
 
 
 def bidirectional_conditional_insertion_sort(array, left, right):
+    print()
+
     sort_left = left
     sort_right = right
 
+    before_memory = memory_usage()
     start_time = time.time()
 
     while sort_left < sort_right:
@@ -61,10 +64,13 @@ def bidirectional_conditional_insertion_sort(array, left, right):
         sort_right -= 1
 
     end_time = time.time()
+    after_memory = memory_usage()
+
     execution_time = (end_time - start_time) * 1000
 
-    print(f"Execution Time: {execution_time:.2f} milliseconds")
-    print(f"Memory Usage: {memory_usage():.2f} KB")
+    print('Bidirectional Conditional Insertion Sort')
+    print(f"Execution Time: {execution_time:.4f} milliseconds")
+    print(f"Extra Space: {after_memory - before_memory:.4f} MB")
 
 
 def is_equal(array, sort_left, sort_right):
